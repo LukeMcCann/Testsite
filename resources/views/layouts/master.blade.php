@@ -16,6 +16,7 @@
 @include('layouts.nav')
 @yield('nav')
 @yield('content')
+@yield('content')
 </body>
 </head>
 </html>

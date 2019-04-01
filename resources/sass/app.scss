@@ -1,3 +1,4 @@
+@import "../../node_modules/bootstrap";
 
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
@@ -5,16 +6,5 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '../../node_modules/bootstrap/scss/bootstrap';
-
-
-//.navbar-laravel {
-//  background-color: #fff;
-//  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-//}
-
-
-body {
-  background-color: #05ffb0;
-}
+// Nav Styles
+@import 'nav';

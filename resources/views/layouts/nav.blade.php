@@ -7,11 +7,11 @@
         </div>
         <nav id="navbar">
             <ul class="nav-items">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{route('index')}}">Home</a></li>
+                <li><a href="{{route('about')}}">About</a></li>
+                <li><a href="{{route('projects')}}">Projects</a></li>
+                <li><a href="{{route('blog')}}">Blog</a></li>
+                <li><a href="{{route('shop')}}">Products</a></li>
             </ul>
         </nav>
         <button>

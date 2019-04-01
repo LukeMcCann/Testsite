@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', 'PagesController@index');
+Route::get('/', 'PagesController@index')->name('index');
 Route::get('/home', 'PagesController@index');
-Route::get('/about', 'PagesController@about');
-Route::get('/shop', 'PagesController@shop');
-Route::get('/projects', 'PagesController@projects');
-Route::get('/blog', 'PagesController@blog');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/shop', 'PagesController@shop')->name('shop');
+Route::get('/projects', 'PagesController@projects')->name('projects');
+Route::get('/blog', 'PagesController@blog')->name('blog');

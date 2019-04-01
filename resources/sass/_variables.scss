@@ -1,3 +1,6 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 // Body
 $body-bg: #f8fafc;
@@ -6,6 +9,14 @@ $body-bg: #f8fafc;
 $font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+
+// Font Sizes
+$logo-font-size: 20px;
+$nav-font-size: 15px;
+
+// Fonts
+$nav-font: "Roboto";
+$logo-font: "Dancing Script";
 
 // Colors
 $blue: #3490dc;
@@ -18,3 +29,12 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+// Specific Colors
+$main-text: #000000;
+$nav-text: #000000;
+$nav-bg: #ffffff;
+$nav-border: #ff0000;
+$onHover: #ff0000;
+$active-text: #ff0000;
+$logo-text: #E52E2D;

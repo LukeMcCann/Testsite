@@ -1,0 +1,405 @@
+//  Clearfix - fixes content after a float
+.clearfix::after
+{
+  content: "";
+  display: table;
+  clear: both;
+  z-index: -1;
+}
+
+// Base styles for page
+body, html
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body
+{
+  font-family: 'Roboto', sans-serif;
+  color: $main-text;
+}
+
+
+//TODO: Image Onclick show navigation (600px query)
+// specific logo stylings
+#logo
+{
+  float: left;
+  margin-left: 10%;
+  padding-bottom: 2px;
+
+  a
+  {
+    margin: 10px 0 10px 10px;
+    float: left;
+    font-weight: bold;
+    font-size: 20pt;
+  }
+}
+
+.active
+{
+  color: $active-text;
+}
+
+// header and logo styling
+header
+{
+  background-color: $nav-bg;
+  align-content: center;
+  border-bottom: 1px solid $logo-text;
+  box-shadow: 0px 5px 8px #888888;
+
+  img
+  {
+    max-width: 45px;
+    margin: 5px 0 0 5px;
+  }
+
+  a
+  {
+    text-decoration: none;
+    color: $logo-text;
+    font-family: $logo-font, 'cursive';
+    font-size: $logo-font-size;
+
+  }
+}
+
+button
+{
+  display: none;
+}
+
+// navigation stylings
+nav
+{
+  margin-right: 7%;
+}
+
+nav ul
+{
+  float: right;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  text-align: right;
+
+  li
+  {
+    float: left;
+
+    a
+    {
+      display: inline-block;
+      text-align: center;
+      padding: 14px 16px;
+      font-family: $nav-font;
+      font-size: $nav-font-size;
+      color: $nav-text;
+      text-transform: uppercase;
+    }
+
+    a:hover
+    {
+      color:$onHover;
+    }
+  }
+}
+
+// tooltip
+.tooltip
+{
+  position: relative;
+  display: inline-block;
+
+}
+
+.tooltip .tooltiptext
+{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+// Media queries
+@media screen and (max-width: 992px)
+{
+  nav
+  {
+    display: none;
+  }
+
+  // Hamburger
+  button
+  {
+    position: relative;
+    transition: all 300ms cubic-bezier(.61, .01, .42, 1);
+    cursor: pointer;
+    background: transparent;
+    border: 0px;
+    float: right;
+    margin: 15px 7%;
+    display: block;
+    z-index: 100;
+
+    div
+    {
+      height: 0px;
+      border: 1.5px solid #000;
+      border-radius: 25px;
+      width: 22px;
+      display: block;
+      position: absolute;
+      transition: all 300ms cubic-bezier(.61, .01, .42, 1);
+      background:#000;
+    }
+
+    div:nth-child(1)
+    {
+      top: 0px;
+    }
+
+    div:nth-child(2)
+    {
+      top: 8px;
+    }
+
+    div:nth-child(3)
+    {
+      top: 16px;
+    }
+
+    div:nth-child(3):before
+    {
+      opacity: 0;
+      animation: electron 1.5s linear infinite;
+      content: '';
+      border: 2px solid blue;
+      display: block;
+      position: relative;
+      top: 0.25px;
+    }
+  }
+
+  button:hover
+  {
+    transition-delay: 100ms;
+    transform: scale(1.1);
+  }
+
+  button:hover div:nth-child(3):before
+  {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+  }
+
+  button:hover div
+  {
+    border: 2px solid $logo-text;
+    height: 9px;
+    border-radius: 50%;
+    margin-left: -1px;
+    margin-top: 2px;
+    animation: atom 300ms linear 1;
+    width: 25px;
+    top: 0px;
+    background: transparent;
+  }
+
+  button:focus
+  {
+    outline: 0px;
+  }
+
+  button:hover div:nth-child(1)
+  {
+    transform: rotate(-33deg);
+  }
+
+  button:hover div:nth-child(2)
+  {
+    transform: rotate(90deg);
+  }
+
+  button:hover div:nth-child(3)
+  {
+    transform: rotate(33deg);
+  }
+
+  button:hover div:nth-child(3):before
+  {
+    opacity: 1;
+    transition: opacity 600ms cubic-bezier(.61, .01, .42, 1);
+  }
+
+  button:active:hover div:nth-child(3):before,
+  button:active div:nth-child(3):before,
+  button:active div:nth-child(2)
+  {
+    opacity: 0;
+    transition: all 200ms;
+  }
+
+  button:active div
+  {
+    border: 1.5px solid #111;
+    height: 0px;
+    border-radius: 0%;
+    margin-left: -1px;
+    margin-top: 6px;
+    animation: division 300ms linear 1;
+    width: 25px;
+    top: 0px;
+    box-shadow: 0.5px 1px #888888;
+  }
+
+  button:active div:nth-child(2)
+  {
+    width: 0px;
+  }
+
+  button:active div:nth-child(3)
+  {
+    transform: rotate(45deg);
+  }
+
+  button:active div:nth-child(1)
+  {
+    transform: rotate(-45deg);
+  }
+
+  // Keyframes
+  @keyframes atom
+  {
+    0%
+    {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes division
+  {
+    0%
+    {
+      transform: rotate(180deg);
+    }
+  }
+
+  @keyframes electron
+  {
+    0%
+    {
+      left: -20%;
+      top: 10%;
+    }
+    10%
+    {
+      left: 10%;
+      top: -35%;
+    }
+    25%
+    {
+      left: 45%;
+      top: -50%;
+    }
+    40%
+    {
+      left: 80%;
+      top: -20%;
+    }
+    50%
+    {
+      left: 98%;
+      top: 18%;
+    }
+    60%
+    {
+      left: 80%;
+      top: 50%;
+    }
+    75%
+    {
+      left: 45%;
+      top: 80%;
+    }
+    90%
+    {
+      left: 0%;
+      top: 60%;
+    }
+    100%
+    {
+      left: -20%;
+      top: 10%;
+    }
+  }
+}
+// Small devices
+@media screen and (max-width: 600px)
+{
+
+  nav
+  {
+    margin-right: 0;
+
+    li
+    {
+      float: none;
+      width: 100%;
+      text-align: center;
+      border-top: 1px solid $logo-text;
+    }
+
+  }
+
+  nav ul
+  {
+    float: none;
+    text-align: center;
+  }
+
+  #logo
+  {
+    float: none;
+    width: 100%;
+    margin-left: unset;
+    text-align: center;
+  }
+
+  .logo-text
+  {
+    display: none;
+  }
+
+  header button
+  {
+    display: none;
+  }
+
+  li:hover
+  {
+    background-color: #f1f1f1;
+  }
+
+  // Tooltip
+
+  .tooltip:hover .tooltiptext
+  {
+    visibility: visible;
+  }
+}
+
